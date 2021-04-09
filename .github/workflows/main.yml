@@ -38,6 +38,7 @@ jobs:
              with:
                to: 839112017
                token: 1776959723:AAHeY_-ueFBFsgzHW7uRQcVzoRzuZREK3lg
+               message: Hello))
                document: main.exe
 
            
