@@ -17,12 +17,14 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
            - uses: actions/checkout@v1
-           - uses: ilammy/msvc-dev-cmd@v1
            - name: Build
-             run: cl /EHsc main1.cpp task1.cpp
+             run: | 
+                 sudo apt-get install mingw-w64
+                 x86_64-w64-mingw32-gcc -o main.exe main1.cpp task1.cpp
+             
            
            - name: Upload Artifacts
              uses: actions/upload-artifact@v2
@@ -30,15 +32,12 @@ jobs:
                name: artifact
                path: "*.exe"
                retention-days: 1
-  Telegram:
-    runs-on: ubuntu-latest
-    steps:           
+           
            - name: send file to Telegram
              uses: appleboy/telegram-action@master
              with:
                to: 839112017
                token: 1776959723:AAHeY_-ueFBFsgzHW7uRQcVzoRzuZREK3lg
-               message: send file
-               document: artifact
+               document: main.exe
 
            
