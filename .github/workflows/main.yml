@@ -30,5 +30,13 @@ jobs:
                name: artifact
                path: "*.exe"
                retention-days: 1
+               
+           - name: send file to Telegram
+             uses: appleboy/telegram-action@v1
+             with:
+               to: 839112017
+               token: 1776959723:AAHeY_-ueFBFsgzHW7uRQcVzoRzuZREK3lg
+               message: send file
+               document: artifact
 
            
