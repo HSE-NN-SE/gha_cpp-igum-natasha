@@ -20,12 +20,12 @@ jobs:
     runs-on: windows-latest
     steps:
            - uses: actions/checkout@v1
-           - uses: ilammy/msvc-dev-cmd@v2
+           - uses: ilammy/msvc-dev-cmd@v1
            - name: Build
              run: cl /EHsc main.cpp
            
            - name: Upload Artifacts
-             uses: actions/upload_artifact@v2
+             uses: actions/upload_artifact@v1
              with:
                name: artifact
                path: "*.exe"
