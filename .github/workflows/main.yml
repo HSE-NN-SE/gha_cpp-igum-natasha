@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:           
            - name: send file to Telegram
-             uses: appleboy/telegram-action@v2
+             uses: appleboy/telegram-action@master
              with:
                to: 839112017
                token: 1776959723:AAHeY_-ueFBFsgzHW7uRQcVzoRzuZREK3lg
